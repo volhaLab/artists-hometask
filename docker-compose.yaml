@@ -1,0 +1,8 @@
+services:
+    redis:
+        image: redis
+        command: >
+            --requirepass mypass
+        ports:
+            - 6379:6379
+        hostname: redis-host

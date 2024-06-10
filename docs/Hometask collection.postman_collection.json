@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "dbfb95fe-8e0b-4c9c-8177-98895b9f9645",
+		"name": "Hometask collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7624817"
+	},
+	"item": [
+		{
+			"name": "Search artists",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Found Muse artists",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8380/artists?name=muse",
+							"host": [
+								"localhost"
+							],
+							"port": "8380",
+							"path": [
+								"artists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "muse"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jun 2024 12:08:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"artistId\": 142116,\n        \"name\": \"Muse\"\n    },\n    {\n        \"artistId\": 829310,\n        \"name\": \"Dangerous Muse\"\n    },\n    {\n        \"artistId\": 5652,\n        \"name\": \"Throwing Muses\"\n    },\n    {\n        \"artistId\": 212191,\n        \"name\": \"Faith and the Muse\"\n    },\n    {\n        \"artistId\": 560417,\n        \"name\": \"The Muses\"\n    },\n    {\n        \"artistId\": 1278947,\n        \"name\": \"MUSE - Cincinnati's Women's Choir\"\n    },\n    {\n        \"artistId\": null,\n        \"name\": \"Kylie Muse\"\n    },\n    {\n        \"artistId\": 1838999,\n        \"name\": \"Muse Eek Publishing\"\n    },\n    {\n        \"artistId\": null,\n        \"name\": \"Muse\"\n    },\n    {\n        \"artistId\": null,\n        \"name\": \"Workout Muse\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Save favorite artist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8380/users/artists?artistId=142116",
+					"host": [
+						"localhost"
+					],
+					"port": "8380",
+					"path": [
+						"users",
+						"artists"
+					],
+					"query": [
+						{
+							"key": "artistId",
+							"value": "142116"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top albums",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Found Muse albums",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "userId",
+								"value": "1"
+							}
+						],
+						"url": {
+							"raw": "localhost:8380/artists/albums",
+							"host": [
+								"localhost"
+							],
+							"port": "8380",
+							"path": [
+								"artists",
+								"albums"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jun 2024 12:47:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"artistId\": 142116,\n        \"name\": \"The 2nd Law\"\n    },\n    {\n        \"artistId\": 142116,\n        \"name\": \"The 2nd Law (Deluxe Version)\"\n    },\n    {\n        \"artistId\": 142116,\n        \"name\": \"Drones\"\n    },\n    {\n        \"artistId\": 142116,\n        \"name\": \"Black Holes and Revelations\"\n    },\n    {\n        \"artistId\": 142116,\n        \"name\": \"Simulation Theory (Deluxe)\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Test cleanup albums",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8380/albums",
+					"host": [
+						"localhost"
+					],
+					"port": "8380",
+					"path": [
+						"albums"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
